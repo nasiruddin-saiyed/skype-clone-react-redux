@@ -1,7 +1,10 @@
 import * as React from "react";
 import './Main.css';
 
-export interface IMainProps {}
+export interface IMainProps {
+    user: any;
+    activeUserId: any;
+}
 
 export interface IMainState {}
 
