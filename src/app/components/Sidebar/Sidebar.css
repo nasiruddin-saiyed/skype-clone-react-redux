@@ -1,5 +1,7 @@
 .Sidebar {
     width: 80px;
+    overflow: scroll;
+    text-align: initial;
     background-color: rgba(32, 32, 35, 1);
     height: 100%;
     border-right: 1px solid rgba(189, 189, 192, 0.1);

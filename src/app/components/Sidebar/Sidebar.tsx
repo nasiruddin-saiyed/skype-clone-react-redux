@@ -1,7 +1,9 @@
 import * as React from 'react';
+import User from '../../containers/User/User';
 import './Sidebar.css';
 
 export interface ISidebarProps {
+    contacts: any
 }
 
 export interface ISidebarState {
@@ -18,7 +20,10 @@ export default class Sidebar extends React.Component<ISidebarProps, ISidebarStat
   public render() {
     return (
       <div>
-        <aside className="Sidebar">Sidebar</aside>
+        <aside className="Sidebar">
+            {this.props.contacts.map((contact:any) => <User user={contact} key={contact.user_id} />)}
+
+        </aside>
       </div>
     );
   }
