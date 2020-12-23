@@ -1,7 +1,7 @@
 import * as React from 'react';
 import store from '../../services/store';
-import ChatHeader from './ChatHeader/ChatHeader';
-import ChatMessageList from './ChatMessageList/ChatMessageList';
+import ChatHeader from '../../containers/ChatHeader/ChatHeader';
+import ChatMessageList from '../../containers/ChatMessageList/ChatMessageList';
 import  _ from 'lodash';
 
 import './ChatWindow.css';
