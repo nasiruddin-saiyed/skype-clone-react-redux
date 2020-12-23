@@ -2,6 +2,7 @@ import * as React from 'react';
 import './Sidebar.css';
 
 export interface ISidebarProps {
+    contacts: any
 }
 
 export interface ISidebarState {
