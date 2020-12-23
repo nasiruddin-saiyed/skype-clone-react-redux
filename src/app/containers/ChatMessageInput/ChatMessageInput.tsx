@@ -22,14 +22,12 @@ export default class ChatMessageInput extends React.Component<
   public render() {
     const value = this.props.value;
     //first retrieve the current state object
-    const state = store.getState();
+    const state: any = store.getState();
 
-    const handleSubmit = (e:any) => {
+    const handleSubmit = (e: any) => {
       e.preventDefault();
-      const { typing, activeUserId } = state;
-      console.log("sendMessage : ", typing, activeUserId);
-      
-      store.dispatch(sendMessage(typing, activeUserId));
+      const { typing, activeUserId, num = false } = state;      
+      store.dispatch(sendMessage(typing, activeUserId, num ? num : false));
     };
     const handleChange = (e: any) => {
       store.dispatch(setTypingValue(e.target.value));
