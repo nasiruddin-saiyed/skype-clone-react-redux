@@ -1,10 +1,10 @@
 import * as React from "react";
-import { setTypingValue } from "../../services/actions";
+import { sendMessage, setTypingValue } from "../../services/actions";
 import store from "../../services/store";
 import "./ChatMessageInput.css";
 
 export interface IChatMessageInputProps {
-    value:any
+  value: any;
 }
 
 export interface IChatMessageInputState {}
@@ -20,12 +20,22 @@ export default class ChatMessageInput extends React.Component<
   }
 
   public render() {
-      const value = this.props.value
-    const handleChange = (e:any) => {
+    const value = this.props.value;
+    //first retrieve the current state object
+    const state = store.getState();
+
+    const handleSubmit = (e:any) => {
+      e.preventDefault();
+      const { typing, activeUserId } = state;
+      console.log("sendMessage : ", typing, activeUserId);
+      
+      store.dispatch(sendMessage(typing, activeUserId));
+    };
+    const handleChange = (e: any) => {
       store.dispatch(setTypingValue(e.target.value));
     };
     return (
-      <form className="Message">
+      <form className="Message" onSubmit={handleSubmit}>
         <input
           className="Message__input"
           onChange={handleChange}

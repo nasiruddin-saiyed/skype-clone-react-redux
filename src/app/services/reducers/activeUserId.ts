@@ -1,6 +1,6 @@
 import { SET_ACTIVE_USER_ID } from "../actions/constants/action-types";
 
-export default function activeUserId(state = null, action:any) {
+export default function activeUserId(state:any = null, action:any) {
   switch (action.type) {
     case SET_ACTIVE_USER_ID:
       return action.payload;

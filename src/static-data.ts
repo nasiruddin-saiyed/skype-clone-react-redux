@@ -16,7 +16,7 @@ export const getMessages = (messagesPerUser: any) => {
 };
 
 // just an example of how the state object is structured
-export const state = {
+export const state:any = {
   user: generateUser(),
   messages: getMessages(10),
   typing: "",
