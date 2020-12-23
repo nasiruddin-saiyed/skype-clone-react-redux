@@ -18,9 +18,7 @@ export default class ChatWindow extends React.Component<IChatWindowProps, IChatW
 
   public render() {
     return (
-      <div>
-        
-      </div>
+        <div className="ChatWindow">Conversation for user id: {this.props.activeUserId}</div>
     );
   }
 }

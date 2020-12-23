@@ -16,7 +16,9 @@ export default class Empty extends React.Component<IEmptyProps, IEmptyState> {
   }
 
   public render() {
-    const { name, profile_pic, status } = this.props.user;
+    const { name, status } = this.props.user;
+    const profile_pic = 'https://unsplash.it/100/100';
+
     const first_name = name.split(" ")[0];
 
     return (
