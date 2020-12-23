@@ -1,4 +1,8 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-export default (state: any, action: any) => {
-  return state;
-};
+import { combineReducers } from "redux";
+import user from "./userReducer";
+import contacts from "./contactsReducer";
+
+export default combineReducers({
+  user,
+  contacts,
+});
